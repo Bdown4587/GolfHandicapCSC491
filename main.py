@@ -110,6 +110,7 @@ class Application(tk.Tk):
         #CLOSE add player window
         self.load_player_window.destroy()
 
+#Define how to calculate score
     def calculate_score(self):
         #Create window for entering scores
         self.score_window = tk.Toplevel(self)
@@ -167,7 +168,7 @@ class Application(tk.Tk):
         player_results = ""
         for player in self.players.values():
             #add each players anme and total and hadndicapc score to results
-            player_results += f"{player.name}: {player.total_score}/{player.final_score}\n"
+            player_results += f"{player.name}: {self.total_score}/{self.final_score}\n"
         #dispaly message with results
         messagebox.showinfo("Golf Score Calculation Complete", player_results)
         self.score_window.destroy() #close window
